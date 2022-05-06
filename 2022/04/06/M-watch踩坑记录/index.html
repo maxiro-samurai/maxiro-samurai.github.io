@@ -9,7 +9,7 @@
     
     <title>
         
-            K210学习（一） |
+            M-watch踩坑记录 |
         
         假面骑士鸡翅
     </title>
@@ -28,119 +28,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"><style>mjx-container[jax="SVG"] {
-  direction: ltr;
-}
-
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-}
-
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
-
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
-
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
-
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
-
-g[data-mml-node="mtable"] > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > .mjx-dashed {
-  stroke-dasharray: 140;
-}
-
-g[data-mml-node="mtable"] > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
-
-g[data-mml-node="mtable"] > svg {
-  overflow: visible;
-}
-
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
-
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-.MathJax path {
-  stroke-width: 3;
-}
-
-mjx-container[display="true"] {
-  overflow: auto hidden;
-}
-
-mjx-container[display="true"] + br {
-  display: none;
-}
-</style></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -264,7 +152,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">K210学习（一）</span>
+            <span class="title-hover-animation">M-watch踩坑记录</span>
         </div>
 
         
@@ -283,31 +171,16 @@ mjx-container[display="true"] + br {
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-03-30 21:12:09</span>
-        <span class="mobile">2022-03-30 21:12</span>
+        <span class="pc">2022-04-06 11:26:50</span>
+        <span class="mobile">2022-04-06 11:26</span>
     </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E7%A1%AC%E4%BB%B6/">硬件</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%A1%AC%E4%BB%B6/K210/">K210</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>272 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>85 字</span>
         </span>
     
     
@@ -328,28 +201,25 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>去年电赛就知道K210了，本来最优解决方案就是用K210，但是时间太短了没时间学（还是自己菜），最近刚好毕设要用到，买了一个开发板，正好学习下看看K210怎么跑神经网络的。</p>
-<p><br><br></p>
-<h1 id="K210芯片"><a href="#K210芯片" class="headerlink" title="K210芯片"></a>K210芯片</h1><p>双核RISC-V处理器架构，算力1TOPS，功耗0.3W，而且国产芯片自带KPU神经网络加速器，一片不到50。（STM32H743也就这水平，效果怎么那么差，当时OPENMV还不支持神经网络，支持神经网络的必须要大SRAM）  </p>
-<p><br><br>  </p>
-<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><p>软件用MaixPy，编程跟OPENMV一样使用MicroPython</p>
-<p><br><br>  </p>
-<h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><p>开发板使用最小系统板<br><br><br>  </p>
-<h1 id="最爱的点灯环节"><a href="#最爱的点灯环节" class="headerlink" title="最爱的点灯环节"></a>最爱的点灯环节</h1><p>代码  </p>
-<pre><code>from fpioa_manager import fm #导入FPIOA库，这个库可以使任意外设映射在任意引脚上
-from Maix import GPIO # GPIO外设库
+            <h1 id="M-watch项目记录"><a href="#M-watch项目记录" class="headerlink" title="M-watch项目记录"></a>M-watch项目记录</h1><ul>
+<li><p>无线电源部分  </p>
+<p>  BQ51013b  </p>
+<p>  替换参考设计的时候要思考，不能用简化器件替代</p>
+<p>  <br/><br></p>
+  <div>            <!--块级封装-->
+      <center>    <!--将图片和文字居中-->
+      <img src="https://cdn.jsdelivr.net/gh/maxiro-samurai/image-bed@main/image/47aeb1612ea6b0c9c7106072513b530.6fn4o2h9h3o0.webp"
+          alt="寄"
+          style="zoom:这里写图片的缩放百分比"/>
+      <br>        <!--换行-->
+      参考设计    <!--标题-->
+      </center>
+  </div>
+  <br><br>  
 
-io_led_red = 13    #LED红灯引脚
-fm.register(io_led_red, fm.fpioa.GPIO0)     #映射13引脚为GPIO0
-
-led_r=GPIO(GPIO.GPIO0, GPIO.OUT)    # 设置为输出模式
-while True :
-    led_r.value(0)  # 值为0
-    time.delay(1000)
-    led_r.value(1)  # 值为0
-    time.delay(1000)
-</code></pre>
-<p>上传开发板</p>
+<p>  仅用一个PMOS管代替肯定不行，因为此电路电源双向导通的，OUT端电压先产生，会直接影响AD端电压，使无线充电关闭。</p>
+</li>
+</ul>
 
         </div>
 
@@ -357,11 +227,11 @@ while True :
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：K210学习（一）</li>
+        <li>本文标题：M-watch踩坑记录</li>
         <li>本文作者：假面骑士鸡翅</li>
-        <li>创建时间：2022-03-30 21:12:09</li>
+        <li>创建时间：2022-04-06 11:26:50</li>
         <li>
-            本文链接：https://maxiro-samurai.github.io/2022/03/30/K210学习（一）/
+            本文链接：https://maxiro-samurai.github.io/2022/04/06/M-watch踩坑记录/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -380,13 +250,13 @@ while True :
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/03/31/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E4%B8%89%EF%BC%89/"
+                           href="/2022/04/12/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E4%BA%94%EF%BC%89/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">重新开始的模电生活（三）</span>
+                                <span class="post-nav-title-item">重新开始的模电生活（五）</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -396,10 +266,10 @@ while True :
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/03/29/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E4%BA%8C%EF%BC%89/"
+                           href="/2022/04/03/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E5%9B%9B%EF%BC%89/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">重新开始的模电生活（二）</span>
+                                <span class="post-nav-title-item">重新开始的模电生活（四）</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -607,7 +477,7 @@ while True :
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K210%E8%8A%AF%E7%89%87"><span class="nav-text">K210芯片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-text">软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6"><span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E7%88%B1%E7%9A%84%E7%82%B9%E7%81%AF%E7%8E%AF%E8%8A%82"><span class="nav-text">最爱的点灯环节</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#M-watch%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95"><span class="nav-text">M-watch项目记录</span></a></li></ol>
     </div>
 </div>
         </aside>
