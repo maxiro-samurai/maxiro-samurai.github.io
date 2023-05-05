@@ -9,7 +9,7 @@
     
     <title>
         
-            M-watch踩坑记录 |
+            核磁共振原理（一） |
         
         假面骑士鸡翅
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">M-watch踩坑记录</span>
+            <span class="title-hover-animation">核磁共振原理（一）</span>
         </div>
 
         
@@ -171,21 +171,43 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-04-06 11:26:50</span>
-        <span class="mobile">2022-04-06 11:26</span>
+        <span class="pc">2023-05-05 19:14:08</span>
+        <span class="mobile">2023-05-05 19:14</span>
     </span>
     
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%BD%B1%E5%83%8F%E5%9F%BA%E7%A1%80/">影像基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/MRI/">MRI</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>85 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -201,25 +223,82 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="M-watch项目记录"><a href="#M-watch项目记录" class="headerlink" title="M-watch项目记录"></a>M-watch项目记录</h1><ul>
-<li><p>无线电源部分  </p>
-<p>  BQ51013b  </p>
-<p>  替换参考设计的时候要思考，不能用简化器件替代</p>
-<p>  <br/><br></p>
-  <div>            <!--块级封装-->
-      <center>    <!--将图片和文字居中-->
-      <img src="https://cdn.jsdelivr.net/gh/maxiro-samurai/image-bed@main/image/47aeb1612ea6b0c9c7106072513b530.6fn4o2h9h3o0.webp"
-          alt="寄"
-          style="zoom:这里写图片的缩放百分比"/>
-      <br>        <!--换行-->
-      参考设计    <!--标题-->
-      </center>
-  </div>
-  <br><br>  
+            <h1 id="核磁共振原理（一）"><a href="#核磁共振原理（一）" class="headerlink" title="核磁共振原理（一）"></a>核磁共振原理（一）</h1><p>&amp;emsp;&amp;emsp;核磁共振仪主要由主磁体、梯度系统、射频系统、计算机系统和其他辅助设备。  </p>
+<p><br> <br></p>
+<h2 id="主磁体"><a href="#主磁体" class="headerlink" title="主磁体"></a>主磁体</h2><p>&amp;emsp;&amp;emsp;主磁体分为永磁型和电磁型，永磁性产生的磁场强度通常比电磁型小，电磁型可以产生很大的磁场强度。  </p>
+<br>
 
-<p>  仅用一个PMOS管代替肯定不行，因为此电路电源双向导通的，OUT端电压先产生，会直接影响AD端电压，使无线充电关闭。</p>
-</li>
+<h3 id="主要参数"><a href="#主要参数" class="headerlink" title="主要参数"></a>主要参数</h3><ul>
+<li>磁场强度：磁场强度的单位为T（特斯拉），G（高斯），定义1G为，距离通过5A电流的线圈5cm处的磁场强度。1T&#x3D;10000G。一般把0.5T以下的MRI仪称为低场机，0.5<del>1.0T为中场机，1.0</del>2.0T为高场机，大于2.0T的称为超高场机（3.0T）。高磁场强度的优点：1.提高质子的磁化率，增加图像的信噪比；2.缩短MRI成像的时间；3.增加血氧饱和度依赖效应（BOLD），使脑功能成像的信号变化更为明显。</li>
 </ul>
+<br>
+
+<ul>
+<li>主磁场均匀度：磁场均匀性是指在一定的容积范围内磁场强度的均一性，也即单位面积内通过的磁力线数目的一致性。</li>
+</ul>
+<br>
+
+<ul>
+<li>主磁场的稳定性：实际上是指主磁场强度及其均匀性的变化，也成为磁场漂移。</li>
+</ul>
+<br>
+
+<h2 id="梯度系统"><a href="#梯度系统" class="headerlink" title="梯度系统"></a>梯度系统</h2><p>&amp;emsp;&amp;emsp;梯度系统是MRI仪最重要的硬件之一，由梯度线圈、梯度放大器、数模转换器、梯度控制器、梯度冷却装置构成，梯度线圈安装于主磁体内。梯度系统的主要作用：1、进行MRI信号的空间定位编码。2、产生梯度回波信号。</p>
+<p><br> <br></p>
+<h3 id="磁共振坐标系"><a href="#磁共振坐标系" class="headerlink" title="磁共振坐标系"></a>磁共振坐标系</h3><p>&amp;emsp;&amp;emsp;坐标系主要由x、y、z构成，Z轴是人体长轴方向正方向为头部，X轴正方向为人体左侧，Y轴正方向是人体解剖位置前侧。</p>
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.6l8s8g8fhd80.webp"
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比"/>
+    <br>        <!--换行-->
+    磁共振系统的坐标系    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<h3 id="梯度磁场的产生"><a href="#梯度磁场的产生" class="headerlink" title="梯度磁场的产生"></a>梯度磁场的产生</h3><p>&amp;emsp;&amp;emsp;以Z轴为例，梯度线圈是特殊绕制的线圈，在头部和脚部。线圈通电后，电流流过头部线圈产生与主磁场方向相同的磁场，两个磁场强度叠加，头部磁场强度增高。脚步磁场方向相反，磁场减弱。从而形成沿着Z轴分布，头侧高足侧低的梯度磁场，梯度线圈中心位置的磁场强度保持不变。</p>
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.73xhniy5x0s0.webp"
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比"/>
+    <br>        <!--换行-->
+    梯度磁场    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<h2 id="射频系统"><a href="#射频系统" class="headerlink" title="射频系统"></a>射频系统</h2><p><br> <br><br>&amp;emsp;&amp;emsp;射频系统由射频发生器、射频放大器和射频线圈构成。射频线圈有发射线圈和接收线圈。发射线圈发出射频脉冲（无线电波）激发人体内的质子发生共振（后面补充），接收线圈接收人体发出的MR信号。</p>
+<p><br> <br></p>
+<h2 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h2><br>
+&emsp;&emsp;计算机系统控制着MRI仪的射频脉冲激发、信号采集、数据运算和图像显示等功能。
+
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.zfblrvdtb4w.webp"
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比"/>
+    <br>        <!--换行-->
+    核磁共振控制系统结构    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<ol>
+<li>SCP(scan control processor) 扫描控制系统：产生序列脉冲的全部硬件开关信号，控制全部硬件（射频，梯度，采样，重构）开始和结束时间点。</li>
+<li>TRF（trigger and rotational function board）：定位引起的坐标旋转变换，对应梯度的控制，以及对SRF的触发控制。</li>
+<li>SRF（sequence related function board）:负责序列中梯度系统涡流校正补偿对梯度的触发控制。</li>
+<li>IRF（interface relate function board）射频控制器：负责主时钟的同步，控制发射射频控制器。</li>
+<li>DRF（digital receiver filter）数字滤波器：对IRF发送来的采集数据，进行频率解调，去除掉载波频率，同时进行一定的降噪处理。</li>
+<li>APS（acquisition processing subsystem）:根据主机序列所对应的扫描参数，负责对采集的数据按K空间顺序、层面关系及平均次数排序组合，并把排列好的K空间发送给重建处理器。</li>
+<li>Reflex AP 重建处理器：专门负责对原始数据进行傅里叶变换。</li>
+</ol>
+<p><br><br></p>
+<p>这一部分简单介绍核磁共振仪器的硬件组成，之后笔记记录学习核磁共振物理学原理。</p>
 
         </div>
 
@@ -227,11 +306,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：M-watch踩坑记录</li>
+        <li>本文标题：核磁共振原理（一）</li>
         <li>本文作者：假面骑士鸡翅</li>
-        <li>创建时间：2022-04-06 11:26:50</li>
+        <li>创建时间：2023-05-05 19:14:08</li>
         <li>
-            本文链接：https://maxiro-samurai.github.io/2022/04/06/M-watch踩坑记录/
+            本文链接：https://maxiro-samurai.github.io/2023/05/05/核磁共振原理（一）/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -243,33 +322,26 @@
         
 
         
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/MRI/">#MRI</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
             <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/04/12/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E4%BA%94%EF%BC%89/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">重新开始的模电生活（五）</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
                 
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/03/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E7%9A%84%E6%A8%A1%E7%94%B5%E7%94%9F%E6%B4%BB%EF%BC%88%E5%9B%9B%EF%BC%89/"
+                           href="/2022/05/06/%E5%91%8A%E5%88%AB/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">重新开始的模电生活（四）</span>
+                                <span class="post-nav-title-item">告别</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -477,7 +549,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#M-watch%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95"><span class="nav-text">M-watch项目记录</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89"><span class="nav-text">核磁共振原理（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E7%A3%81%E4%BD%93"><span class="nav-text">主磁体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0"><span class="nav-text">主要参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E7%B3%BB%E7%BB%9F"><span class="nav-text">梯度系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-text">磁共振坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E7%A3%81%E5%9C%BA%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="nav-text">梯度磁场的产生</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%84%E9%A2%91%E7%B3%BB%E7%BB%9F"><span class="nav-text">射频系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">计算机系统</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
