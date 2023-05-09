@@ -314,12 +314,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.5k 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.5k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>11 分钟</span>
         </span>
     
     
@@ -528,7 +528,7 @@ mjx-container[display="true"] + br {
 <h3 id="纵向弛豫"><a href="#纵向弛豫" class="headerlink" title="纵向弛豫"></a>纵向弛豫</h3><p><br><br></p>
 <p>当射频脉冲关闭后，在主磁场的作用下组织中的宏观纵向磁化矢量将逐渐恢复到激发前的状态即平衡状态，这一过程称为纵向弛豫，即T1弛豫。</p>
 <p>以90°脉冲为例，当脉冲关闭后，纵向磁化矢量将从零开始逐渐恢复至平衡状态。一般用T1值来描述组织的纵向弛豫的快慢。以90°脉冲关闭后，宏观纵向磁化矢量为零，以此为起点至宏观纵向磁化矢量恢复至最大值的63%为终点，这之间的时间间隔为T1值。</p>
-<p>纵向弛豫正好是与横向弛豫相反的过程，处于高能级状态的质子释放出能量回到低能级状态的过程。T1弛豫也可用来区分不同组织。</p>
+<p>纵向弛豫正好是与横向弛豫相反的过程，处于高能级状态的质子释放出能量回到低能级状态的过程。T1弛豫也可用来区分不同组织。<br>T1弛豫能量释放快慢和质子周围的分子热运动频率有关，如果质子周围的分子热运动频率与质子的进动频率相等，那么质子能量释放的越快，纵向弛豫过程越短，T1越短，如果与周围分子的热运动频率相差较大，那么T1越长。</p>
 <p><br><br></p>
 <div>            <!--块级封装-->
     <center>    <!--将图片和文字居中-->
@@ -538,6 +538,59 @@ mjx-container[display="true"] + br {
     </center>
 </div>
 <br><br> 
+
+<h2 id="磁共振信号"><a href="#磁共振信号" class="headerlink" title="磁共振信号"></a>磁共振信号</h2><p>磁共振线圈只能采集到旋转的宏观横向磁化矢量，而宏观横向磁化矢量切割接收线圈而产生的电信号实际上就是原始的磁共振信号。只要在接受时宏观横向磁化矢量越大，则采集到的电信号越大。</p>
+<h3 id="自由感应衰减信号"><a href="#自由感应衰减信号" class="headerlink" title="自由感应衰减信号"></a>自由感应衰减信号</h3><p>组织接受90°射频脉冲的激发，组织中将产生宏观横向磁化矢量，射频脉冲关闭后组织中的宏观横向磁化矢量由于受T2弛豫和主磁场不均匀的影响，而指数形式较快衰减，即自由感应衰减。<br><br><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.22r8g81erakg.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    自由感应衰减信号    <!--标题-->
+    </center>
+</div>
+<br><br> 
+
+<h3 id="自旋回波信号"><a href="#自旋回波信号" class="headerlink" title="自旋回波信号"></a>自旋回波信号</h3><p>把主磁场不均匀造成的影响剔除，采集到的信息才能真正反映组织的T2弛豫。所采用的办法是180°聚焦脉冲。</p>
+<br> 
+从Z轴方向看XY平面，假设质子逆时针进动，且进动方向保持不变。90°脉冲激发后质子的横向磁化分矢量相位一致。随着时间的推移，由于主磁场不均匀，质子的横向磁化矢量逐渐失相，到了180°脉冲施加前的即刻，质子1进动最快相位走在最前，质子4进动最慢，其相位落在最后；施加180°聚焦脉冲后，所有质子的相位反转了180°，即进动最慢的质子4的相位到了最前面，进动最快的质子1相位落到后面。
+
+<p><br><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.6jugw2snvaw0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    180°聚焦脉冲机制    <!--标题-->
+    </center>
+</div>
+<br><br> 
+
+<p>质子1依然进动最快，质子4进动最慢，所以随着质子群的推移，质子群相位逐渐重聚，将形成一个逐渐增大的宏观横向磁化矢量。经过与Ti相同的时间即2倍Ti时刻，进动最快的质子1赶上进动最慢的质子4。将形成最大的横向宏观磁化矢量。从此刻开始由于磁场强度分布不均匀，又将开始自由感应衰减。产生的这种回波信号称为自旋回波（SE）。</p>
+<p><br><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2fwjud6odusk.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    180°聚焦脉冲机制    <!--标题-->
+    </center>
+</div>
+<br><br> 
+
+
+<h3 id="梯度回波信号"><a href="#梯度回波信号" class="headerlink" title="梯度回波信号"></a>梯度回波信号</h3><p>梯度回波的产生过程是:如果人为的再添加一个磁场梯度，使磁场的不均匀程度更大，那么就会进一步加速T2*衰减，经过一段时间，将磁场梯度翻转。之前磁场强度较低的地方反过来具有较高的磁场强度，之前旋转得慢的原子核就旋转得更快了。相应地，之前磁场强度较高的地方反过来具有较低的磁场强度，之前旋转得快的原子核就旋转得更慢了。经过一定时间，之前的失相位就会被抵消，不同位置处的原子核相位重新同步，它们的磁化向量的方向分布更集中，这些向量之和的幅值就逐渐增大了。此时测得的信号就是一个梯度回波信号</p>
+<p>值得注意的是，只有施加磁场梯度产生的失相位才在添加反向磁场梯度后被抵消，由于其他原因产生的磁场不均匀 (例如BO的不均匀)是不会被抵消的，因此梯度回波的幅值是由T2*决定。</p>
+<p><br><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.5ccatrk01q00.webp" alt="寄" style="zoom:这里写图片的缩放百分比">     
+    <br>        <!--换行-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2ubniuu2n3m0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    梯度回波信号    <!--标题-->
+    </center>
+</div>
+<br><br> 
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《磁共振成像技术指南》—— 杨正汉<br>懿氏百科全书</p>
+
         </div>
 
         
@@ -787,7 +840,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E7%89%A9%E7%90%86%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="nav-text">核磁共振物理学原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84"><span class="nav-text">原子结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E6%97%8B%E5%92%8C%E6%A0%B8%E7%A3%81"><span class="nav-text">自旋和核磁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E4%BD%93%E4%B8%AD%E7%9A%84%E7%A3%81%E6%80%A7%E5%8E%9F%E5%AD%90"><span class="nav-text">人体中的磁性原子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E4%B8%BB%E7%A3%81%E5%9C%BA%E5%90%8E%E4%BA%BA%E4%BD%93%E6%B0%A2%E8%B4%A8%E5%AD%90%E6%A0%B8%E7%A3%81%E7%8A%B6%E6%80%81%E5%8F%91%E7%94%9F%E5%8F%98%E5%8C%96"><span class="nav-text">进入主磁场后人体氢质子核磁状态发生变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%8A%A8"><span class="nav-text">进动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%8A%A8%E9%A2%91%E7%8E%87"><span class="nav-text">进动频率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E8%A7%82%E6%A8%AA%E5%90%91%E7%A3%81%E5%8C%96%E7%9F%A2%E9%87%8F%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="nav-text">宏观横向磁化矢量的检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E7%8E%B0%E8%B1%A1"><span class="nav-text">磁共振现象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#90%C2%B0%E8%84%89%E5%86%B2"><span class="nav-text">90°脉冲</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E7%A3%81%E5%BC%9B%E8%B1%AB"><span class="nav-text">核磁弛豫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E5%BC%9B%E8%B1%AB"><span class="nav-text">横向弛豫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%B5%E5%90%91%E5%BC%9B%E8%B1%AB"><span class="nav-text">纵向弛豫</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E7%89%A9%E7%90%86%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="nav-text">核磁共振物理学原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84"><span class="nav-text">原子结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E6%97%8B%E5%92%8C%E6%A0%B8%E7%A3%81"><span class="nav-text">自旋和核磁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E4%BD%93%E4%B8%AD%E7%9A%84%E7%A3%81%E6%80%A7%E5%8E%9F%E5%AD%90"><span class="nav-text">人体中的磁性原子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E4%B8%BB%E7%A3%81%E5%9C%BA%E5%90%8E%E4%BA%BA%E4%BD%93%E6%B0%A2%E8%B4%A8%E5%AD%90%E6%A0%B8%E7%A3%81%E7%8A%B6%E6%80%81%E5%8F%91%E7%94%9F%E5%8F%98%E5%8C%96"><span class="nav-text">进入主磁场后人体氢质子核磁状态发生变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%8A%A8"><span class="nav-text">进动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%8A%A8%E9%A2%91%E7%8E%87"><span class="nav-text">进动频率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E8%A7%82%E6%A8%AA%E5%90%91%E7%A3%81%E5%8C%96%E7%9F%A2%E9%87%8F%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="nav-text">宏观横向磁化矢量的检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E7%8E%B0%E8%B1%A1"><span class="nav-text">磁共振现象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#90%C2%B0%E8%84%89%E5%86%B2"><span class="nav-text">90°脉冲</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E7%A3%81%E5%BC%9B%E8%B1%AB"><span class="nav-text">核磁弛豫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E5%90%91%E5%BC%9B%E8%B1%AB"><span class="nav-text">横向弛豫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%B5%E5%90%91%E5%BC%9B%E8%B1%AB"><span class="nav-text">纵向弛豫</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E4%BF%A1%E5%8F%B7"><span class="nav-text">磁共振信号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%94%B1%E6%84%9F%E5%BA%94%E8%A1%B0%E5%87%8F%E4%BF%A1%E5%8F%B7"><span class="nav-text">自由感应衰减信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%97%8B%E5%9B%9E%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="nav-text">自旋回波信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E5%9B%9E%E6%B3%A2%E4%BF%A1%E5%8F%B7"><span class="nav-text">梯度回波信号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
