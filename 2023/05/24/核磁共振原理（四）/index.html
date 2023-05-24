@@ -9,7 +9,7 @@
     
     <title>
         
-            核磁共振原理（三） |
+            核磁共振原理（四） |
         
         假面骑士鸡翅
     </title>
@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">核磁共振原理（三）</span>
+            <span class="title-hover-animation">核磁共振原理（四）</span>
         </div>
 
         
@@ -283,8 +283,8 @@ mjx-container[display="true"] + br {
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2023-05-09 15:37:20</span>
-        <span class="mobile">2023-05-09 15:37</span>
+        <span class="pc">2023-05-24 17:11:15</span>
+        <span class="mobile">2023-05-24 17:11</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -314,12 +314,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>997 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>712 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
         </span>
     
     
@@ -335,46 +335,56 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h1 id="磁共振加权成像"><a href="#磁共振加权成像" class="headerlink" title="磁共振加权成像"></a>磁共振加权成像</h1><p>加权是“突出重点”的意思，组织的多方面特性均可能对其磁共振信号的强弱有影响，我们可以通过成像脉冲序列的选择及成像参数的调整，使MR图像主要反映组织某方面特性，而尽量抑制组织的其他特性对MR信号强度的影响。</p>
-<p>TI加权成像（T1-weighted imaging,T1WI）是指图像中组织信号强度的高低主要反映的是组织的纵向弛豫差别。</p>
-<p>T2加权成像（T2-weighted imaging,T2WI）重点突出的是不同组织之间的横向弛豫差别。</p>
-<p>质子密度加权成像（PDWI）则主要反映单位体积的不同组织之间的质子含量差别。</p>
-<h2 id="质子密度加权成像"><a href="#质子密度加权成像" class="headerlink" title="质子密度加权成像"></a>质子密度加权成像</h2><p>质子密度加权成像主要反映单位体积不同组织间质子含量的差别。以甲乙两种组织为例，甲组织质子含量高于乙质子，90°射频脉冲激发后甲组织产生的旋转宏观横向磁化矢量就大于乙组织，这时马上检测MR信号，甲组织产生的MR信号将高于乙组织。<br><br><br></p>
+            <h1 id="磁共振的空间定位"><a href="#磁共振的空间定位" class="headerlink" title="磁共振的空间定位"></a>磁共振的空间定位</h1><p>地球上的纬度的定位依靠地磁梯度，实际上磁共振信号的三维空间定位也是利用三套梯度线圈产生的梯度磁场来实现的。MR信号的空间定位包括层面层厚的选择、频率编码、相位编码。</p>
+<h2 id="层面和层厚的选择"><a href="#层面和层厚的选择" class="headerlink" title="层面和层厚的选择"></a>层面和层厚的选择</h2><p>在1.5T场强下，质子进动频率约为64MHZ。在Z轴施加一个梯度场，在Z轴中心质子进动频率依然为64MHZ，靠近头部磁场逐渐减小进动频率变慢，靠近脚部磁场逐渐增大进动频率变大。假设梯度磁场造成进动频率差为1MHZ/cm，则使用63.5~64.5MHZ的射频脉冲，被激发层面的中心位置就在Z轴中心，厚度为1cm。<br><br><br></p>
 <div>            <!--块级封装-->
     <center>    <!--将图片和文字居中-->
-    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.1sknim5qd1c0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.37rwdnj62a20.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
     <br>        <!--换行-->
-    质子密度加权成像    <!--标题-->
+    层面和层厚选择    <!--标题-->
     </center>
 </div>
 <br><br>  
 
-<h2 id="T2加权成像与T2-加权成像"><a href="#T2加权成像与T2-加权成像" class="headerlink" title="T2加权成像与T2*加权成像"></a>T2加权成像与T2*加权成像</h2><p>T2WI主要反映不同组织间横向弛豫的差别，必须用聚焦脉冲采集自旋回波方可得到组织真正的T2弛豫信息。</p>
-<p>同样以甲乙组织为例，假如质子密度一样，甲乙两种组织产生的宏观纵向磁化矢量大小相同，一个射频脉冲如90°脉冲激发后，两种组织产生的旋转宏观横向磁化矢量大小也相同，这时不马上检测MR信号；90°脉冲关闭后，甲组织横向弛豫比乙组织慢，到一定时刻，甲组织衰减掉的宏观横向磁化矢量少于乙组织，其残留的宏观横向磁化矢量将大于乙组织，这时再检测MR信号，甲组织的MR信号强度将高于乙组织，这样就实现了T2WI。<br><br><br></p>
+<p>在检查部位与层面选择梯度线圈的相对位置保持不变的情况下，层面和层厚受梯度场强度和射频脉冲影响的规律如下:</p>
+<ol>
+<li>梯度场不变,射频脉冲的频率增加,则层面的位置向梯度场高的一侧移动。</li>
+<li>梯度场不变，射频脉冲的带宽加宽，层厚增厚。</li>
+<li>射频脉冲的带宽不变,梯度场的场强增加,层厚变薄。</li>
+</ol>
+<h2 id="频率编码"><a href="#频率编码" class="headerlink" title="频率编码"></a>频率编码</h2><p>经过选层得到的信号是一个二维层面所有的信息，需要进行频率编码和相位编码来区分方向。以头颅的横断面为例，在前后方向施加前高后低的梯度场，这样前部的质子进动频率高，后面的质子进动频率低。采集到的MR信号中就包含有不同频率空间的信息，经过傅里叶变换后可以区分出不同频率，分配到前后方向各自的位置上。<br><br><br></p>
 <div>            <!--块级封装-->
     <center>    <!--将图片和文字居中-->
-    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.5g9aucqlwms0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.5zr1l34humo.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
     <br>        <!--换行-->
-    T2WI加权成像原理    <!--标题-->
+    频率编码    <!--标题-->
     </center>
 </div>
 <br><br>  
 
-<p>前面所述的 T2WI的回波信号必须采用聚焦脉冲来获得，如果不采用聚焦脉冲而仅采用读出梯度场的切换获取梯度回波信号，<br>则磁共振信号反映的不是真正的 T2 弛豫信息而是T2*弛豫信息，因此得到的不是T2WI而是T2*WI。</p>
-<h2 id="T1加权成像"><a href="#T1加权成像" class="headerlink" title="T1加权成像"></a>T1加权成像</h2><p>T1WI主要反映组织纵向弛豫的差别我们还是以甲、乙两种组织为例，假设这两种组织质子密度相同,但甲组织的纵向弛豫比乙组织快(即甲组织的 T1值短于乙组织)。进入主磁场后由于质子密度一样,甲乙两种组织产生的纵向磁化矢量大小相同，一个射频脉冲如 90°脉冲后产生的宏观横向磁化矢量的大小也相同,我们先不去理会这种宏观横向磁化矢量,也不马上检测 MR 信号。射频脉冲关闭后,甲乙两种组织将发生纵向驰豫，由于甲组织的纵向弛豫比乙组织快,过一定时间甲组织纵向磁化矢量比乙组织大。这时再产生一个90°脉冲，第二个 90°脉冲后,甲、乙两组织的宏观纵向磁化矢量将发生偏转，产生宏观横向磁化矢量，因为这时甲组织的纵向磁化矢量大于乙组织,其产生的宏观横向磁化矢量将大于乙组织,这时马上检测 MR信号,甲组织产生的 MR 信号将高于乙组织。</p>
-<p><br><br></p>
+
+<h2 id="相位编码"><a href="#相位编码" class="headerlink" title="相位编码"></a>相位编码</h2><p>频率编码只实现了区分前后位置，并没有左右位置的信息，因此需要相位编码来区分左右。<br>在左右方向施加一个左高右低的相位编码梯度场，这样左右质子的进动频率就不同。进动频率不同会导致一段时间后质子的相位改变，这时关闭梯度场，这样相位的差别就会被保留下来。这时采集MR信号带有不同的相位信息，通过傅里叶变换可以区分不同相位的信号，实现了左右方向的空间定位。<br><br><br></p>
 <div>            <!--块级封装-->
     <center>    <!--将图片和文字居中-->
-    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.508hys956yw0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.7e68kk6zftg0.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.64glxi4s6z00.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
     <br>        <!--换行-->
-    T1WI加权成像原理    <!--标题-->
+    相位编码    <!--标题-->
     </center>
 </div>
 <br><br>  
-在T1WI上,组织的T1值越小,其MR信号强度越大.
 
-<hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《磁共振成像技术指南》—— 杨正汉</p>
+<p>由于傅里叶变换的特性，只能区分180°相位的信号。因此如果矩阵是256×256的图像需要进行256次相位编码。<br><br><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2ft3s2058ym8.webp" alt="寄" style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    相位编码实际施加    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>《磁共振成像技术指南》—— 杨正汉</p>
 
         </div>
 
@@ -382,11 +392,11 @@ mjx-container[display="true"] + br {
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：核磁共振原理（三）</li>
+        <li>本文标题：核磁共振原理（四）</li>
         <li>本文作者：假面骑士鸡翅</li>
-        <li>创建时间：2023-05-09 15:37:20</li>
+        <li>创建时间：2023-05-24 17:11:15</li>
         <li>
-            本文链接：https://maxiro-samurai.github.io/2023/05/09/核磁共振原理（三）/
+            本文链接：https://maxiro-samurai.github.io/2023/05/24/核磁共振原理（四）/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -410,29 +420,14 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/05/24/%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8E%9F%E7%90%86%EF%BC%88%E5%9B%9B%EF%BC%89/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">核磁共振原理（四）</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/05/06/%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8E%9F%E7%90%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
+                           href="/2023/05/09/%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%89%EF%BC%89/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">核磁共振原理（二）</span>
+                                <span class="post-nav-title-item">核磁共振原理（三）</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -640,7 +635,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8A%A0%E6%9D%83%E6%88%90%E5%83%8F"><span class="nav-text">磁共振加权成像</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A8%E5%AD%90%E5%AF%86%E5%BA%A6%E5%8A%A0%E6%9D%83%E6%88%90%E5%83%8F"><span class="nav-text">质子密度加权成像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2%E5%8A%A0%E6%9D%83%E6%88%90%E5%83%8F%E4%B8%8ET2-%E5%8A%A0%E6%9D%83%E6%88%90%E5%83%8F"><span class="nav-text">T2加权成像与T2*加权成像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T1%E5%8A%A0%E6%9D%83%E6%88%90%E5%83%8F"><span class="nav-text">T1加权成像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A3%81%E5%85%B1%E6%8C%AF%E7%9A%84%E7%A9%BA%E9%97%B4%E5%AE%9A%E4%BD%8D"><span class="nav-text">磁共振的空间定位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E9%9D%A2%E5%92%8C%E5%B1%82%E5%8E%9A%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-text">层面和层厚的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E7%BC%96%E7%A0%81"><span class="nav-text">频率编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E4%BD%8D%E7%BC%96%E7%A0%81"><span class="nav-text">相位编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol>
     </div>
 </div>
         </aside>
