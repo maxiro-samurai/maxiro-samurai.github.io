@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Nipype（四）：Interfaces |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Nipype（四）：Interfaces
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-08-03 15:45:29</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Feb 21 2025 15:48:55 GMT+0800">2025-02-21 15:48:55</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/python/">python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Interfaces"><a href="#Interfaces" class="headerlink" title="Interfaces"></a>Interfaces</h1><p>在之前已经学习过Interfaces的基本概念和操作，这里简单介绍一下。Interfaces就是其他软件包的python函数接口，想要使用其他软件的（例如FSL,SPM或者FreeSurfer）函数，就需要此函数的python接口和安装相应的软件包。</p>
+<h2 id="BET函数原始使用方法"><a href="#BET函数原始使用方法" class="headerlink" title="BET函数原始使用方法"></a>BET函数原始使用方法</h2><p>先看一下我们需要去头骨的原始图像。</p>
+<pre><code>from nilearn.plotting import plot_anat
+%matplotlib inline
+plot_anat(&#39;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&#39;, title=&#39;original&#39;,
+      display_mode=&#39;ortho&#39;, dim=-1, draw_cross=False, annotate=False);
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.4xdlr3xmwg00.webp"  alt="image"></p>
+<p>使用BET函数命令行形式（即在FSL中原始使用方法）</p>
+<pre><code>bet &lt;input&gt; &lt;output&gt;
+</code></pre>
+<p>在ipython中则需要在前面加<code>%%bash</code></p>
+<pre><code>%%bash
+
+FILENAME=/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w
+
+bet $&#123;FILENAME&#125;.nii.gz /output/sub-01_ses-test_T1w_bet.nii.gz
+</code></pre>
+<p>使用查看帮助信息</p>
+<pre><code>!bet -h
+
+Usage:    bet &lt;input&gt; &lt;output&gt; [options]
+
+Main bet2 options:
+-o          generate brain surface outline overlaid onto original image
+-m          generate binary brain mask
+-s          generate approximate skull image
+-n          don&#39;t generate segmented brain image output
+-f &lt;f&gt;      fractional intensity threshold (0-&gt;1); default=0.5; smaller values give larger brain outline estimates
+-g &lt;g&gt;      vertical gradient in fractional intensity threshold (-1-&gt;1); default=0; positive values give larger brain outline at bottom, smaller at top
+-r &lt;r&gt;      head radius (mm not voxels); initial surface sphere is set to half of this
+-c &lt;x y z&gt;  centre-of-gravity (voxels not mm) of initial mesh surface.
+-t          apply thresholding to segmented brain image and mask
+-e          generates brain surface as mesh in .vtk format
+
+Variations on default bet2 functionality (mutually exclusive options):
+(default)   just run bet2
+-R          robust brain centre estimation (iterates BET several times)
+-S          eye &amp; optic nerve cleanup (can be useful in SIENA)
+-B          bias field &amp; neck cleanup (can be useful in SIENA)
+-Z          improve BET if FOV is very small in Z (by temporarily padding end slices)
+-F          apply to 4D FMRI data (uses -f 0.3 and dilates brain mask slightly)
+-A          run bet2 and then betsurf to get additional skull and scalp surfaces (includes registrations)
+-A2 &lt;T2&gt;    as with -A, when also feeding in non-brain-extracted T2 (includes registrations)
+
+Miscellaneous options:
+-v          verbose (switch on diagnostic messages)
+-h          display this help, then exits
+-d          debug (don&#39;t delete temporary intermediate images)
+</code></pre>
+<p>使用命令行生成二进制掩膜文件。</p>
+<pre><code>%%bash
+
+FILENAME=/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w
+
+bet $&#123;FILENAME&#125;.nii.gz /output/sub-01_ses-test_T1w_bet.nii.gz -m
+</code></pre>
+<p>由此我们可知道python接口的函数实际上也是在命令行中输入需要的操作，不过使用的是python脚本形式。</p>
+<h2 id="BET函数接口使用"><a href="#BET函数接口使用" class="headerlink" title="BET函数接口使用"></a>BET函数接口使用</h2><p>在之前有，这里简要介绍。</p>
+<pre><code># import BET函数
+from nipype.interfaces.fsl import BET
+skullstrip = BET() # 对象实例化
+skullstrip.inputs.in_file = &quot;/data/ds000114/sub-01/ses-test/anat/ sub-01_ses-test_T1w.nii.gz&quot; # 输入文件路径
+skullstrip.inputs.out_file = &quot;/output/T1w_nipype_bet.nii.gz&quot; # 输出文件路径
+res = skullstrip.run() # 运行
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.vyddlx4ra8g.webp"  alt="image"></p>
+<p>我们来看一下输出的命令行</p>
+<pre><code>print(skullstrip.cmdline)
+
+bet /data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz /output/T1w_nipype_bet.nii.gz
+</code></pre>
+<p>与我们正常使用时的一样。</p>
+<h2 id="Interface-errors"><a href="#Interface-errors" class="headerlink" title="Interface errors"></a>Interface errors</h2><p>使用<code>run</code>方法运行接口时，对于FSL、Freesurfer和其他程序，会使系统输入上述命令行命令。对于MATLAB的程序如SPM，它会生成一个.m文件，然后在matlab环境下运行这个.m文件。</p>
+<p>如果我们不给函数接口一个必要的输入参数它就会报错</p>
+<pre><code>skullstrip2 = BET()
+try:
+    skullstrip2.run()
+except(ValueError) as err:
+    print(&quot;ValueError:&quot;, err)
+else:
+    raise
+
+ValueError: BET requires a value for input &#39;in_file&#39;. For a list of required inputs, see BET.help()
+</code></pre>
+<p>BET函数没有输入文件的路径</p>
+<p>又或者输入类型搞错，比如BET（）函数想要生成掩膜文件，你却把淹没文件的名字输入上去了 XD。</p>
+<pre><code>try:
+skullstrip.inputs.mask = &quot;mask_file.nii&quot;
+except(Exception) as err:
+    if &quot;TraitError&quot; in str(err.__class__):
+        print(&quot;TraitError:&quot;, err)
+    else:
+        raise
+else:
+    raise
+TraitError: The &#39;mask&#39; trait of a BETInputSpec instance must be a boolean, but a value of &#39;mask_file.nii&#39; &lt;class &#39;str&#39;&gt; was specified.
+</code></pre>
+<p>在报错的时候根据报错信息修改程序</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>nipype_tutorial <a class="link"   target="_blank" rel="noopener" href="https://miykael.github.io/nipype_tutorial/notebooks/basic_interfaces.html" >Interface<i class="fas fa-external-link-alt"></i></a></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/03/13/%E8%BF%9C%E7%A8%8B%E4%BF%9D%E5%AD%98hexo%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93/"
+                                   title="远程保存hexo博客仓库"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">远程保存hexo博客仓库</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/07/24/Nipype%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AQuickstart/"
+                                   title="Nipype（三）:Quickstart"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Nipype（三）:Quickstart</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

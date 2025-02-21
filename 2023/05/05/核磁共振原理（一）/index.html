@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            核磁共振原理（一） |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        核磁共振原理（一）
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-05-05 19:14:08</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Feb 21 2025 15:48:55 GMT+0800">2025-02-21 15:48:55</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%BD%B1%E5%83%8F%E5%9F%BA%E7%A1%80/">影像基础</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/MRI/">MRI</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="核磁共振仪的硬件组成"><a href="#核磁共振仪的硬件组成" class="headerlink" title="核磁共振仪的硬件组成"></a>核磁共振仪的硬件组成</h1><p>  核磁共振仪主要由主磁体、梯度系统、射频系统、计算机系统和其他辅助设备。  </p>
+<p><br> <br></p>
+<h2 id="主磁体"><a href="#主磁体" class="headerlink" title="主磁体"></a>主磁体</h2><p>  主磁体分为永磁型和电磁型，永磁性产生的磁场强度通常比电磁型小，电磁型可以产生很大的磁场强度。  </p>
+<br>
+
+<h3 id="主要参数"><a href="#主要参数" class="headerlink" title="主要参数"></a>主要参数</h3><ul>
+<li>磁场强度：磁场强度的单位为T（特斯拉），G（高斯），定义1G为，距离通过5A电流的线圈5cm处的磁场强度。1T&#x3D;10000G。一般把0.5T以下的MRI仪称为低场机，0.5<del>1.0T为中场机，1.0</del>2.0T为高场机，大于2.0T的称为超高场机（3.0T）。高磁场强度的优点：1.提高质子的磁化率，增加图像的信噪比；2.缩短MRI成像的时间；3.增加血氧饱和度依赖效应（BOLD），使脑功能成像的信号变化更为明显。</li>
+</ul>
+<br>
+
+<ul>
+<li>主磁场均匀度：磁场均匀性是指在一定的容积范围内磁场强度的均一性，也即单位面积内通过的磁力线数目的一致性。</li>
+</ul>
+<br>
+
+<ul>
+<li>主磁场的稳定性：实际上是指主磁场强度及其均匀性的变化，也成为磁场漂移。</li>
+</ul>
+<br>
+
+<h2 id="梯度系统"><a href="#梯度系统" class="headerlink" title="梯度系统"></a>梯度系统</h2><p>  梯度系统是MRI仪最重要的硬件之一，由梯度线圈、梯度放大器、数模转换器、梯度控制器、梯度冷却装置构成，梯度线圈安装于主磁体内。梯度系统的主要作用：1、进行MRI信号的空间定位编码。2、产生梯度回波信号。</p>
+<p><br> <br></p>
+<h3 id="磁共振坐标系"><a href="#磁共振坐标系" class="headerlink" title="磁共振坐标系"></a>磁共振坐标系</h3><p>  坐标系主要由x、y、z构成，Z轴是人体长轴方向正方向为头部，X轴正方向为人体左侧，Y轴正方向是人体解剖位置前侧。</p>
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.6l8s8g8fhd80.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    磁共振系统的坐标系    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<h3 id="梯度磁场的产生"><a href="#梯度磁场的产生" class="headerlink" title="梯度磁场的产生"></a>梯度磁场的产生</h3><p>  以Z轴为例，梯度线圈是特殊绕制的线圈，在头部和脚部。线圈通电后，电流流过头部线圈产生与主磁场方向相同的磁场，两个磁场强度叠加，头部磁场强度增高。脚步磁场方向相反，磁场减弱。从而形成沿着Z轴分布，头侧高足侧低的梯度磁场，梯度线圈中心位置的磁场强度保持不变。</p>
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.73xhniy5x0s0.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    梯度磁场    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<h2 id="射频系统"><a href="#射频系统" class="headerlink" title="射频系统"></a>射频系统</h2><p><br> <br><br>  射频系统由射频发生器、射频放大器和射频线圈构成。射频线圈有发射线圈和接收线圈。发射线圈发出射频脉冲（无线电波）激发人体内的质子发生共振（后面补充），接收线圈接收人体发出的MR信号。</p>
+<p><br> <br></p>
+<h2 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h2><br>
+  计算机系统控制着MRI仪的射频脉冲激发、信号采集、数据运算和图像显示等功能。
+
+<p><br/><br></p>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.zfblrvdtb4w.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    核磁共振控制系统结构    <!--标题-->
+    </center>
+</div>
+<br><br>  
+
+<ol>
+<li>SCP(scan control processor) 扫描控制系统：产生序列脉冲的全部硬件开关信号，控制全部硬件（射频，梯度，采样，重构）开始和结束时间点。</li>
+<li>TRF（trigger and rotational function board）：定位引起的坐标旋转变换，对应梯度的控制，以及对SRF的触发控制。</li>
+<li>SRF（sequence related function board）:负责序列中梯度系统涡流校正补偿对梯度的触发控制。</li>
+<li>IRF（interface relate function board）射频控制器：负责主时钟的同步，控制发射射频控制器。</li>
+<li>DRF（digital receiver filter）数字滤波器：对IRF发送来的采集数据，进行频率解调，去除掉载波频率，同时进行一定的降噪处理。</li>
+<li>APS（acquisition processing subsystem）:根据主机序列所对应的扫描参数，负责对采集的数据按K空间顺序、层面关系及平均次数排序组合，并把排列好的K空间发送给重建处理器。</li>
+<li>Reflex AP 重建处理器：专门负责对原始数据进行傅里叶变换。</li>
+</ol>
+<p><br><br></p>
+<p>这一部分简单介绍核磁共振仪器的硬件组成，之后笔记记录学习核磁共振物理学原理。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/MRI/">MRI</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/05/06/%E6%A0%B8%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8E%9F%E7%90%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
+                                   title="核磁共振原理（二）"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">核磁共振原理（二）</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2022/05/06/%E5%91%8A%E5%88%AB/"
+                                   title="告别"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">告别</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Nipype（二）：showcase |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Nipype（二）：showcase
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-07-24 17:13:52</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Feb 21 2025 15:48:55 GMT+0800">2025-02-21 15:48:55</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/python/">python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Nipype-Showcase"><a href="#Nipype-Showcase" class="headerlink" title="Nipype Showcase"></a>Nipype Showcase</h1><p>使用简单的fMRI预处理流程来展示Workflow：</p>
+<ol>
+<li>slice time correction</li>
+<li>motion correction</li>
+<li>smoothing</li>
+</ol>
+<h2 id="准备预处理workflow"><a href="#准备预处理workflow" class="headerlink" title="准备预处理workflow"></a>准备预处理workflow</h2><p>首先导入Nipype包中的Node和Workflow</p>
+<pre><code>from nipype import Node, Workflow
+</code></pre>
+<p>接着导入预处理需要的interfaces</p>
+<pre><code>from nipype.interfaces.fsl import SliceTimer, MCFLIRT, Smooth
+</code></pre>
+<p>接着把这三个接口接入Node并且定义输入</p>
+<pre><code># 初始化slicetime节点
+slicetimer = Node(SliceTimer(index_dir=False,
+                            interleaved=True,
+                            time_repetition=2.5),
+                  name=&quot;slicetimer&quot;)
+
+# 初始化运动矫正节点
+mcflirt = Node(MCFLIRT(mean_vol=True,
+                      save_plots=True),
+              name=&quot;mcflirt&quot;)
+# 初始化光滑节点
+smooth = Node(Smooth(fwhm=4), name=&quot;smooth&quot;)
+</code></pre>
+<p>接下来就可以创建一个workflow，把这三个节点连接起来</p>
+<pre><code># 创建预处理workflow
+preproc01 = Workflow(name=&#39;preproc01&#39;, base_dir=&#39;.&#39;)
+
+# 连接节点到workflow中
+preproc01.connect([(slicetimer, mcflirt, [(&#39;slice_time_corrected_file&#39;, &#39;in_file&#39;)]),
+               (mcflirt, smooth, [(&#39;out_file&#39;, &#39;in_file&#39;)])])
+</code></pre>
+<p>可以把workflow可视化</p>
+<pre><code># 生成可视化图片
+preproc01.write_graph(graph2use=&#39;orig&#39;)
+
+# 导入Ipython的图像包
+from IPython.display import Image
+Image(filename=&quot;preproc01/graph_detailed.png&quot;)
+</code></pre>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.50b24pi7e1c0.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    结果<!--标题-->
+    </center>
+</div>
+ 
+<h2 id="在一个功能图像上运行workflow"><a href="#在一个功能图像上运行workflow" class="headerlink" title="在一个功能图像上运行workflow"></a>在一个功能图像上运行workflow</h2><p>创建过一个workflow后，开始在功能像上运行。首先要确定数据文件的路径。</p>
+<pre><code>slicetimer.inputs.in_file = &#39;/data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz&#39;
+</code></pre>
+<p>data文件夹下有所需要的数据。</p>
+<p>使用Nipype的并行处理功能，观察处理时间</p>
+<pre><code>%time preproc01.run(&#39;MultiProc&#39;, plugin_args=&#123;&#39;n_procs&#39;: 5&#125;)
+</code></pre>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/1690162024205.2r3uycfb2ui0.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    <!--标题-->
+    </center>
+</div>
+
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/1690161973043.4l1flbmece00.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    结果<!--标题-->
+    </center>
+</div>
+
+<p>上图 输出了整个Workflow的工作流程，最后可以看到整个处理花费大概2min。</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>检查一下输出文件夹有什么。</p>
+<pre><code>!tree preproc01 -I &#39;*js|*json|*pklz|_report|*.dot|*html&#39;
+</code></pre>
+<div>            <!--块级封装-->
+    <center>    <!--将图片和文字居中-->
+    <img     src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2li3usdff6a0.webp"  
+        alt="寄"
+        style="zoom:这里写图片的缩放百分比">
+    <br>        <!--换行-->
+    <!--标题-->
+    </center>
+</div>
+
+
+<h2 id="修改参数重新运行"><a href="#修改参数重新运行" class="headerlink" title="修改参数重新运行"></a>修改参数重新运行</h2><pre><code>smooth.inputs.fwhm = 2
+%time preproc01.run(&#39;MultiProc&#39;, plugin_args=&#123;&#39;n_procs&#39;: 5&#125;)
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.vmg63btwdh.webp"  alt="image">  </p>
+<p>可看到时间仅用14秒，因为整个workflow不会重新运行一遍，只把更改参数的Node运行，在这里就是把smooth重新运行。</p>
+<h2 id="并行处理"><a href="#并行处理" class="headerlink" title="并行处理"></a>并行处理</h2><p>preproc1预处理workflow使用了大概两分钟，如果我要处理5张功能像图片，他会花费10分钟。</p>
+<p>首先我们复制5个workflow</p>
+<pre><code># First, let&#39;s copy/clone &#39;preproc01&#39;
+preproc02 = preproc01.clone(&#39;preproc02&#39;)
+preproc03 = preproc01.clone(&#39;preproc03&#39;)
+preproc04 = preproc01.clone(&#39;preproc04&#39;)
+preproc05 = preproc01.clone(&#39;preproc05&#39;)
+</code></pre>
+<p>我们想要并行处理，需要把他们整合在一个workflow中。</p>
+<pre><code>metaflow = Workflow(name=&#39;metaflow&#39;, base_dir=&#39;.&#39;)
+# Now we can add the five preproc workflows to the bigger metaflow
+metaflow.add_nodes([preproc01, preproc02, preproc03,
+                preproc04, preproc05])
+</code></pre>
+<p>可视化看一下整个workflow</p>
+<pre><code># As before, let&#39;s write the graph of the workflow
+metaflow.write_graph(graph2use=&#39;flat&#39;)
+
+Image(filename=&quot;metaflow/graph_detailed.png&quot;)
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2cmsdo1mdt8g.webp"  alt="image"></p>
+<p>使用并行处理</p>
+<pre><code>%time metaflow.run(&#39;MultiProc&#39;, plugin_args=&#123;&#39;n_procs&#39;: 5&#125;)
+</code></pre>
+<p>log信息此处省略<br><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.3zmgk47a2ji0.webp"  alt="image"></p>
+<p>可以看到总共用时2min，这就是使用Nipype的原因。</p>
+<h2 id="metaflow的结果"><a href="#metaflow的结果" class="headerlink" title="metaflow的结果"></a>metaflow的结果</h2><pre><code>!tree metaflow -I &#39;*js|*json|*pklz|_report|*.dot|*html&#39;
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.2kua1bpzkk80.webp"  alt="image"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>nipype官方教程 <a class="link"   target="_blank" rel="noopener" href="https://miykael.github.io/nipype_tutorial/notebooks/introduction_showcase.html" >Nipype Showcase<i class="fas fa-external-link-alt"></i></a></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/07/24/Nipype%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AQuickstart/"
+                                   title="Nipype（三）:Quickstart"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Nipype（三）:Quickstart</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/07/21/Nipype%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9ANipype%E5%BA%93%E5%AD%A6%E4%B9%A0/"
+                                   title="神经影像（一）：Nipype库学习"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">神经影像（一）：Nipype库学习</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

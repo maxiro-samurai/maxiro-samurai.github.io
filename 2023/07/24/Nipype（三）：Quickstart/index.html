@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            Nipype（三）:Quickstart |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Keep Theme","author":"Keep Team","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Keep Theme
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Nipype（三）:Quickstart
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Keep Team</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-07-24 17:15:17</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Feb 21 2025 15:48:55 GMT+0800">2025-02-21 15:48:55</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/python/">python</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Nipype-Quickstart"><a href="#Nipype-Quickstart" class="headerlink" title="Nipype Quickstart"></a>Nipype Quickstart</h1><p>首先需要Import所需要的函数和包</p>
+<pre><code>import os 
+from os.path import abspath
+
+from nipype import Workflow, Node, MapNode, Function
+from nipype.interfaces.fsl import BET, IsotropicSmooth, ApplyMask #fsl的接口函数
+
+from nilearn.plotting import plot_anat #画图
+%matplotlib inline #在Jupyter Notebook中画图时直接嵌入Notebook单元格中
+import matplotlib.pyplot as plt
+</code></pre>
+<h2 id="Interfaces"><a href="#Interfaces" class="headerlink" title="Interfaces"></a>Interfaces</h2><p>接口是Nipype的核心。这些接口是python接口可以通过这些接口访问外部软件包，这些软件包大多不是用python写的。（比如FSL,SPM和FreeSurfer）</p>
+<p>使用FSL中的bet()函数</p>
+<pre><code># will use a T1w from ds000114 dataset
+
+# input_file是BET()函数的输入参数，为数据集的路径
+input_file =  abspath(&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;)
+# BET()实例化
+bet = BET()
+
+bet.inputs.in_file = input_file
+# 输出为输出路径
+bet.inputs.out_file = &quot;/output/T1w_nipype_bet.nii.gz&quot;
+res = bet.run()
+</code></pre>
+<p>画出输出图像</p>
+<pre><code>plot_anat(&#39;/output/T1w_nipype_bet.nii.gz&#39;, 
+      display_mode=&#39;ortho&#39;, dim=-1, draw_cross=False, annotate=False);
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.6a3xqvkyprk0.webp"  alt="image"></p>
+<p>使用help指令可以看接口函数的使用方法</p>
+<pre><code>BET.help()
+
+Wraps the executable command ``bet``.
+
+FSL BET wrapper for skull stripping
+
+For complete details, see the `BET Documentation.
+&lt;https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide&gt;`_
+
+Examples
+--------
+&gt;&gt;&gt; from nipype.interfaces import fsl
+&gt;&gt;&gt; btr = fsl.BET()
+&gt;&gt;&gt; btr.inputs.in_file = &#39;structural.nii&#39;
+&gt;&gt;&gt; btr.inputs.frac = 0.7
+&gt;&gt;&gt; btr.inputs.out_file = &#39;brain_anat.nii&#39;
+&gt;&gt;&gt; btr.cmdline
+&#39;bet structural.nii brain_anat.nii -f 0.70&#39;
+&gt;&gt;&gt; res = btr.run() # doctest: +SKIP
+
+Inputs::
+
+        [Mandatory]
+        in_file: (a pathlike object or string representing an existing file)
+                input file to skull strip
+                argument: ``%s``, position: 0
+
+        [Optional]
+        out_file: (a pathlike object or string representing a file)
+                name of output skull stripped image
+                argument: ``%s``, position: 1
+        outline: (a boolean)
+                create surface outline image
+                argument: ``-o``
+        mask: (a boolean)
+                create binary mask image
+                argument: ``-m``
+        skull: (a boolean)
+                create skull image
+                argument: ``-s``
+        no_output: (a boolean)
+                Don&#39;t generate segmented output
+                argument: ``-n``
+        frac: (a float)
+                fractional intensity threshold
+                argument: ``-f %.2f``
+        vertical_gradient: (a float)
+                vertical gradient in fractional intensity threshold (-1, 1)
+                argument: ``-g %.2f``
+        radius: (an integer)
+                head radius
+                argument: ``-r %d``
+        center: (a list of at most 3 items which are an integer)
+                center of gravity in voxels
+                argument: ``-c %s``
+        threshold: (a boolean)
+                apply thresholding to segmented brain image and mask
+                argument: ``-t``
+        mesh: (a boolean)
+                generate a vtk mesh brain surface
+                argument: ``-e``
+        robust: (a boolean)
+                robust brain centre estimation (iterates BET several times)
+                argument: ``-R``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        padding: (a boolean)
+                improve BET if FOV is very small in Z (by temporarily padding end
+                slices)
+                argument: ``-Z``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        remove_eyes: (a boolean)
+                eye &amp; optic nerve cleanup (can be useful in SIENA)
+                argument: ``-S``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        surfaces: (a boolean)
+                run bet2 and then betsurf to get additional skull and scalp surfaces
+                (includes registrations)
+                argument: ``-A``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        t2_guided: (a pathlike object or string representing a file)
+                as with creating surfaces, when also feeding in non-brain-extracted
+                T2 (includes registrations)
+                argument: ``-A2 %s``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        functional: (a boolean)
+                apply to 4D fMRI data
+                argument: ``-F``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        reduce_bias: (a boolean)
+                bias field and neck cleanup
+                argument: ``-B``
+                mutually_exclusive: functional, reduce_bias, robust, padding,
+                remove_eyes, surfaces, t2_guided
+        output_type: (&#39;NIFTI&#39; or &#39;NIFTI_PAIR&#39; or &#39;NIFTI_GZ&#39; or
+                &#39;NIFTI_PAIR_GZ&#39;)
+                FSL output type
+        args: (a string)
+                Additional parameters to the command
+                argument: ``%s``
+        environ: (a dictionary with keys which are a bytes or None or a value
+                of class &#39;str&#39; and with values which are a bytes or None or a
+                value of class &#39;str&#39;, nipype default value: &#123;&#125;)
+                Environment variables
+
+Outputs::
+
+        out_file: (a pathlike object or string representing a file)
+                path/name of skullstripped file (if generated)
+        mask_file: (a pathlike object or string representing a file)
+                path/name of binary brain mask (if generated)
+        outline_file: (a pathlike object or string representing a file)
+                path/name of outline file (if generated)
+        meshfile: (a pathlike object or string representing a file)
+                path/name of vtk mesh file (if generated)
+        inskull_mask_file: (a pathlike object or string representing a file)
+                path/name of inskull mask (if generated)
+        inskull_mesh_file: (a pathlike object or string representing a file)
+                path/name of inskull mesh outline (if generated)
+        outskull_mask_file: (a pathlike object or string representing a file)
+                path/name of outskull mask (if generated)
+        outskull_mesh_file: (a pathlike object or string representing a file)
+                path/name of outskull mesh outline (if generated)
+        outskin_mask_file: (a pathlike object or string representing a file)
+                path/name of outskin mask (if generated)
+        outskin_mesh_file: (a pathlike object or string representing a file)
+                path/name of outskin mesh outline (if generated)
+        skull_mask_file: (a pathlike object or string representing a file)
+                path/name of skull mask (if generated)
+        skull_file: (a pathlike object or string representing a file)
+                path/name of skull file (if generated)
+
+References:
+-----------
+BibTeX(&#39;@article&#123;JenkinsonBeckmannBehrensWoolrichSmith2012,author=&#123;M. Jenkinson, C.F. Beckmann, T.E. Behrens, M.W. Woolrich, and S.M. Smith&#125;,title=&#123;FSL&#125;,journal=&#123;NeuroImage&#125;,volume=&#123;62&#125;,pages=&#123;782-790&#125;,year=&#123;2012&#125;,&#125;&#39;, key=&#39;JenkinsonBeckmannBehrensWoolrichSmith2012&#39;)
+</code></pre>
+<p>​<br>使用FSL中的光滑函数，高斯核为4mm</p>
+<pre><code>smoothing = IsotropicSmooth()
+smoothing.inputs.in_file = &quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;
+smoothing.inputs.fwhm = 4
+smoothing.inputs.out_file = &quot;/output/T1w_nipype_smooth.nii.gz&quot;
+smoothing.run()
+# plotting the output
+plot_anat(&#39;/output/T1w_nipype_smooth.nii.gz&#39;, 
+      display_mode=&#39;ortho&#39;, dim=-1, draw_cross=False, annotate=False);
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.vpb9jcncd7k.webp"  alt="image"></p>
+<h2 id="Nodes-and-Workflows"><a href="#Nodes-and-Workflows" class="headerlink" title="Nodes and Workflows"></a>Nodes and Workflows</h2><p>接口是Nipype的核心，在使用不同包的接口或者同一个包的不同接口时，需要把接口放在一个Node中，并且多个Node构成一个workflow。</p>
+<p>在Nipype中，一个节点是执行某个函数的物体，这个函数可以是Nipype中的任意接口函数或者是user自己创建的函数，又或者是外部的一个脚本中的。每个节点由名称，接口和最少一个输入和输出构成。</p>
+<p>一旦使用了多个节点，就可以使用workflow连接每一个节点，并且生成一个有向连接图。</p>
+<p>首先创建去头骨节点</p>
+<pre><code># Create Node
+bet_node = Node(BET(), name=&#39;bet&#39;)
+# Specify node inputs
+bet_node.inputs.in_file = input_file
+bet_node.inputs.mask = True
+
+# bet node can be also defined this way:
+#bet_node = Node(BET(in_file=input_file, mask=True), name=&#39;bet_node&#39;)
+</code></pre>
+<p>mask为True表示生成一个去头骨的掩膜图像。</p>
+<p>接下来创建一个光滑节点，使用IsotropicSmooth函数</p>
+<pre><code>smooth_node = Node(IsotropicSmooth(in_file=input_file, fwhm=4), name=&quot;smooth&quot;)
+</code></pre>
+<p>接下来使用掩膜函数把光滑后的图像掩膜。</p>
+<pre><code>mask_node = Node(ApplyMask(), name=&quot;mask&quot;)
+</code></pre>
+<p>使用help指令后可以看到，ApplyMask（）函数有两个必须传入的参数。</p>
+<ul>
+<li><p><code>mask_file</code> :掩膜图像位置</p>
+</li>
+<li><p><code>in_file</code> ：被掩膜的图像</p>
+</li>
+</ul>
+<p>所有节点都创建完毕，接下来创建一个workflow把他们连接起来。首先连接<code>bet_node</code>的输出和<code>mask_node</code>的输入</p>
+<pre><code># Initiation of a workflow
+wf = Workflow(name=&quot;smoothflow&quot;, base_dir=&quot;/output/working_dir&quot;)
+
+wf.connect(bet_node, &quot;mask_file&quot;, mask_node, &quot;mask_file&quot;)
+</code></pre>
+<p>接着连接<code>smooth_node</code>的out_file和<code>mask_node</code>的in_file<br>把这个workflow可视化出来</p>
+<pre><code>wf.connect(smooth_node,&quot;out_file&quot;,mask_node, &quot;in_file&quot;)
+
+
+wf.write_graph(&quot;workflow_graph.dot&quot;)
+Image(filename=&quot;/output/working_dir/smoothflow/workflow_graph.png&quot;)
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.73aqturs75o0.webp"  alt="image"></p>
+<p>或者画出细节图</p>
+<pre><code>wf.write_graph(graph2use=&#39;flat&#39;)
+
+Image(filename=&quot;/output/working_dir/smoothflow/graph_detailed.png&quot;)
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.21b5aym2r528.webp"  alt="image"></p>
+<p>接下来开始运行workflow</p>
+<pre><code>res = wf.run()
+</code></pre>
+<p>列出结果</p>
+<pre><code>list(res.nodes)[0].result.outputs
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/1690184817148.1ju26tsxsr4w.webp"  alt="1690184817148"></p>
+<p>查看生成的文件夹</p>
+<pre><code>! tree -L 3 /output/working_dir/smoothflow/
+</code></pre>
+<p>也可以将生成图片画出</p>
+<pre><code>import numpy as np
+import nibabel as nb
+#import matplotlib.pyplot as plt
+
+# Let&#39;s create a short helper function to plot 3D NIfTI images
+def plot_slice(fname):
+
+    # 加载图像
+    img = nb.load(fname)    
+    data = img.get_data()
+
+    # 因为是3D图像，所以选择Z轴中间切开
+    cut = int(data.shape[-1]/2) + 10   
+
+    # Plot the data
+    plt.imshow(np.rot90(data[..., cut]), cmap=&quot;gray&quot;)
+    plt.gca().set_axis_off()  # 关闭坐标轴
+
+f = plt.figure(figsize=(12, 4))
+for i, img in enumerate([&quot;/data/ds000114/sub-01/ses-test/anat/sub-01_ses-test_T1w.nii.gz&quot;,
+                        &quot;/output/working_dir/smoothflow/smooth/sub-01_ses-test_T1w_smooth.nii.gz&quot;,
+                        &quot;/output/working_dir/smoothflow/bet/sub-01_ses-test_T1w_brain_mask.nii.gz&quot;,
+                        &quot;/output/working_dir/smoothflow/mask/sub-01_ses-test_T1w_smooth_masked.nii.gz&quot;]):
+    f.add_subplot(1, 4, i + 1)
+    plot_slice(img)
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.196qnmp51nwg.webp"  alt="image"></p>
+<h2 id="Iterables"><a href="#Iterables" class="headerlink" title="Iterables"></a>Iterables</h2><p>在做数据处理的时候，经常一个预处理跑多个受试或者做一些组差异比较。避免重复写脚本，Nipype有一个处理插件，叫做iterables</p>
+<p>假如我们有一个workflow上面有两个node，node（A）是去头颅函数，node(B)是光滑函数，现在我们很好奇不同大小的高斯核对结果的影响。因此，我们设置FWHM的值为4mm,8mm和16mm。</p>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.5yngzb9aors0.webp"  alt="image"></p>
+<pre><code>smooth_node_it = Node(IsotropicSmooth(in_file=input_file), name=&quot;smooth&quot;)
+smooth_node_it.iterables = (&quot;fwhm&quot;, [4, 8, 16])
+</code></pre>
+<p>重新定义bet和mask node</p>
+<pre><code>bet_node_it = Node(BET(in_file=input_file, mask=True), name=&#39;bet_node&#39;)
+mask_node_it = Node(ApplyMask(), name=&quot;mask&quot;)
+</code></pre>
+<p>新建一个新的workflow</p>
+<pre><code>wf_it = Workflow(name=&quot;smoothflow_it&quot;, base_dir=&quot;/output/working_dir&quot;)
+wf_it.connect(bet_node_it, &quot;mask_file&quot;, mask_node_it, &quot;mask_file&quot;)
+wf_it.connect(smooth_node_it, &quot;out_file&quot;, mask_node_it, &quot;in_file&quot;)
+</code></pre>
+<p>运行workflow</p>
+<pre><code>res_it = wf_it.run()
+</code></pre>
+<p>看生成的文件<br>    ! tree -L 3 &#x2F;output&#x2F;working_dir&#x2F;smoothflow_it&#x2F;</p>
+<pre><code>/output/working_dir/smoothflow_it/
+├── bet_node
+│   ├── _0x059f982d380f7943757debfb10a5502d.json
+│   ├── command.txt
+│   ├── _inputs.pklz
+│   ├── _node.pklz
+│   ├── _report
+│   │   └── report.rst
+│   ├── result_bet_node.pklz
+│   └── sub-01_ses-test_T1w_brain_mask.nii.gz
+├── d3.js
+├── _fwhm_16
+│   ├── mask
+│   │   ├── _0xd72ea2e7b364b1159092a12f3d3ca28c.json
+│   │   ├── command.txt
+│   │   ├── _inputs.pklz
+│   │   ├── _node.pklz
+│   │   ├── _report
+│   │   ├── result_mask.pklz
+│   │   └── sub-01_ses-test_T1w_smooth_masked.nii.gz
+│   └── smooth
+│       ├── _0xc478d2c0a35763bb8cc0ba0be7c7c4a3.json
+│       ├── command.txt
+│       ├── _inputs.pklz
+│       ├── _node.pklz
+│       ├── _report
+│       ├── result_smooth.pklz
+│       └── sub-01_ses-test_T1w_smooth.nii.gz
+├── _fwhm_4
+│   ├── mask
+│   │   ├── _0x020ff51c3dd2cc1c441bbc71b6bb82fd.json
+│   │   ├── command.txt
+│   │   ├── _inputs.pklz
+│   │   ├── _node.pklz
+│   │   ├── _report
+│   │   ├── result_mask.pklz
+│   │   └── sub-01_ses-test_T1w_smooth_masked.nii.gz
+│   └── smooth
+│       ├── _0x7284dba78093a51ae87024eac1bec00f.json
+│       ├── command.txt
+│       ├── _inputs.pklz
+│       ├── _node.pklz
+│       ├── _report
+│       ├── result_smooth.pklz
+│       └── sub-01_ses-test_T1w_smooth.nii.gz
+├── _fwhm_8
+│   ├── mask
+│   │   ├── _0x3ac21b3bbb4f9177e3221ac52b59a349.json
+│   │   ├── command.txt
+│   │   ├── _inputs.pklz
+│   │   ├── _node.pklz
+│   │   ├── _report
+│   │   ├── result_mask.pklz
+│   │   └── sub-01_ses-test_T1w_smooth_masked.nii.gz
+│   └── smooth
+│       ├── _0x8a60534f7916842abe5b185fdf7996d9.json
+│       ├── command.txt
+│       ├── _inputs.pklz
+│       ├── _node.pklz
+│       ├── _report
+│       ├── result_smooth.pklz
+│       └── sub-01_ses-test_T1w_smooth.nii.gz
+├── graph1.json
+├── graph.json
+└── index.html
+
+17 directories, 47 files
+</code></pre>
+<h2 id="Mapnode"><a href="#Mapnode" class="headerlink" title="Mapnode"></a>Mapnode</h2><p>如果想使输入为多个输入参数的节点的输出都为下一个节点的输入，那么就需要使用<strong>MapNode</strong>。MapNode与普通的Node很像，它的输入可以是一个列表，最终也生成一个输出列表。</p>
+<p>比如你有许多文件，他们都会经过相同的node处理和不同的Node，这时MapNode可以发挥作用。<br><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.51d5xj2wdbc0.webp"  alt="image"></p>
+<p>比如上图，A节点处理后得到一个列表的输出，而这些输出都会经过B节点处理，最后把B得到的结果送入C节点。</p>
+<p>简单例子：</p>
+<pre><code>def square_func(x):
+return x ** 2
+
+# 这里使用nipype的Function接口，把用户自己创建的函数作为一个接口
+square = Function(input_names=[&quot;x&quot;], output_names=[&quot;f_x&quot;], function=square_func)
+</code></pre>
+<p>如果把输入的值设置为一个列表</p>
+<pre><code>square_node = Node(square, name=&quot;square&quot;)
+square_node.inputs.x = [2, 4]
+res = square_node.run()
+res.outputs
+</code></pre>
+<p>输出会报错，因为<code>square_func</code>不能接收一个列表。</p>
+<p>这时我们使用MapNode即可解决！</p>
+<pre><code>square_mapnode = MapNode(square, name=&quot;square&quot;, iterfield=[&quot;x&quot;])
+square_mapnode.inputs.x = [2, 4]
+res = square_mapnode.run()
+res.outputs
+</code></pre>
+<p><img   src="https://cdn.staticaly.com/gh/maxiro-samurai/image-bed@main/image/image.3wcljq4l6ya0.webp"  alt="image"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>nipype官方教程 <a class="link"   target="_blank" rel="noopener" href="https://miykael.github.io/nipype_tutorial/notebooks/introduction_quickstart.html" >Nipype Quickstart<i class="fas fa-external-link-alt"></i></a></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%A5%9E%E7%BB%8F%E5%BD%B1%E5%83%8F/">神经影像</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/08/03/Nipype%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9AInterfaces/"
+                                   title="Nipype（四）：Interfaces"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Nipype（四）：Interfaces</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/07/24/Nipype%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ashowcase/"
+                                   title="Nipype（二）：showcase"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Nipype（二）：showcase</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Keep Team</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
