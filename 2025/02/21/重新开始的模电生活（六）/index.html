@@ -355,7 +355,7 @@ mjx-container[display="true"] + br {
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Feb 21 2025 16:04:11 GMT+0800">2025-02-21 16:04:11</span>
+                    <span class="datetime" data-updated="Wed Feb 26 2025 00:07:28 GMT+0800">2025-02-26 00:07:28</span>
                 </span>
             
         
@@ -394,7 +394,26 @@ mjx-container[display="true"] + br {
                     
 
                     
-                         <h1 id="多级放大电路"><a href="#多级放大电路" class="headerlink" title="多级放大电路"></a>多级放大电路</h1>
+                         <h1 id="多级放大电路"><a href="#多级放大电路" class="headerlink" title="多级放大电路"></a>多级放大电路</h1><p>之前分析过了，共射极、共基极、共集电极放大电路各有优缺点。多级放大电路就是将三种组态的放大电路通过合适的方式级联起来，以增大放大倍数、增加输入电阻、减少输出电阻、增大功率、扩展频带。</p>
+<h2 id="直接耦合"><a href="#直接耦合" class="headerlink" title="直接耦合"></a>直接耦合</h2><p>两级放大电路直接用导线、电阻连接。</p>
+<p>优点：</p>
+<ul>
+<li>直流电压或者低频信号放大</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>前级静态工作点会影响后级静态导致计算麻烦，并且后级静态工作点很难稳定。</li>
+</ul>
+<h2 id="阻容耦合"><a href="#阻容耦合" class="headerlink" title="阻容耦合"></a>阻容耦合</h2><p>使用隔直电容将两级放大电路连接起来，利用后级输入电阻和此电容组成阻容耦合。</p>
+<p>优点：</p>
+<ul>
+<li>静态互不影响，各级静态工作点比较好选择且容易稳定。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>无法放大直流信号，对低频信号有较强的衰减作用。</li>
+</ul>
+
                     
                 </div>
 
